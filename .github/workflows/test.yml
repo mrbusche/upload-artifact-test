@@ -13,12 +13,16 @@ jobs:
         os: [ ubuntu-latest ]
 
     steps:
-      - name: Generate file
-        run: echo "sup" > hi.txt
+      - name: Check out code
+        uses: actions/checkout@v6
+        
+      - name: Find files
+        run: |
+          ls -ltra
 
       - name: Upload results
         uses: actions/upload-artifact@v7
         with:
-          name: test-text-file
-          path: hi.txt
+          name: test-xlsx-file
+          path: main-template.xlsx
           archive: false
