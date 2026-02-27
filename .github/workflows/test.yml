@@ -1,0 +1,24 @@
+name: Test upload file without zip
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    strategy:
+      matrix:
+        os: [ ubuntu-latest ]
+
+    steps:
+      - name: Generate file
+        run: echo "sup" > hi.txt
+
+      - name: Upload results
+        uses: actions/upload-artifact@v7
+        with:
+          name: test-text-file
+          path: hi.txt
+          archive: fals
