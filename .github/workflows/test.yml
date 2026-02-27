@@ -21,4 +21,4 @@ jobs:
         with:
           name: test-text-file
           path: hi.txt
-          archive: fals
+          archive: false
