@@ -19,6 +19,7 @@ jobs:
       - name: Find files
         run: |
           ls -ltra
+          file --mime-type -b main-template.xlsx
 
       - name: Upload results
         uses: actions/upload-artifact@v7
